@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Paradise</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">🍕 Pizza Paradise</div>
+
+      <nav class="nav">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#order">Order</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <br>
+        <button> ☰ </button>
+      </div>
+    </div>
+  </header>
+</body>
+</html>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="overlay">
+    <div class="hero-content">
+      <h1>Delicious, Fresh & Hot <br><span>Pizza</span></h1>
+      <p>Craving a slice? Order now or visit us for an unforgettable experience.</p>
+      <div class="hero-background">
+        <div class="hero-image">
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">View Menu</a>
+        <a href="#reservations" class="btn btn-secondary">Reserve a Table</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===========================
+     MENU SECTION
+=========================== -->
+<!-- Menu Section -->
+<section class="menu-section" id="menu">
+  <div class="menu-header">
+    <h2>Our Pizza Menu 🍕</h2>
+    <p>Freshly baked with love and the finest ingredients.</p>
+  </div>
+
+  <div class="menu-grid">
+    <!-- Pizza Cards -->
+    <div class="menu-card">
+      <img src="img/pep.jpg" alt="Pepperoni Delight" />
+      <h3>Pepperoni Delight</h3>
+      <p>Classic pepperoni with extra cheese.</p>
+      <span class="price">$12.99</span>
+    </div>
+
+    <div class="menu-card">
+      <img src="img/cheesy.jpg" alt="BBQ Chicken" />
+      <h3>BBQ Chicken</h3>
+      <p>Grilled chicken with smoky BBQ sauce.</p>
+      <span class="price">$14.99</span>
+    </div>
+
+    <div class="menu-card">
+      <img src="img/pep.jpg" alt="Margherita" />
+      <h3>Margherita</h3>
+      <p>Fresh tomatoes, mozzarella & basil.</p>
+      <span class="price">$11.99</span>
+    </div>
+  </div>
+
+  <div class="menu-footer">
+    <a href="#" class="menu-btn">View Full Menu</a>
+  </div>
+</section>
+
+<!--Reservation section-->
+<section class="reservation-section" id="order" >
+  <div class="reservation-header" id="reservations">
+    <h2>Reserve Your Table 🍽️</h2>
+    <p>Book your spot or place an order easily online.</p>
+  </div>
+
+  <form class="reservation-form">
+    <!-- Name & Email -->
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+    </div>
+
+    <!-- Date & Time -->
+    <div class="form-group">
+      <input type="date" name="date" required />
+      <input type="time" name="time" required />
+    </div>
+
+    <!-- Number of Guests -->
+    <div class="form-group">
+      <select name="guests" required>
+        <option value="">Guests</option>
+        <option value="1">1 Person</option>
+        <option value="2">2 People</option>
+        <option value="3">3 People</option>
+        <option value="4">4 People</option>
+        <option value="5+">5+ People</option>
+      </select>
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+    </div>
+
+    <!-- Message or Notes -->
+    <div class="form-group full-width">
+      <textarea name="message" rows="4" placeholder="Additional Requests (optional)"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">Book Now</button>
+  </form>
+</section>
+
+<!-- About Us Section -->
+<section class="about" id="about">
+  <div class="about-content">
+    <h2>About <span>Pizza Paradise</span> 🍕</h2>
+    <p>At <strong>Pizza Paradise</strong>, we believe that every great story begins with a slice. We are dedicated to serving delicious, handcrafted pizzas made from the freshest ingredients and love in every bite.</p>
+    <p>Whether you're dining in with family or ordering from home, we make sure every experience is unforgettable. Join us and taste the difference.</p>
+    <a href="#menu" class="btn-primary">Explore Our Menu</a>
+  </div>
+</section>
+<!--Making page transitional-->
+<script>
+  // Trigger fade-in effect after DOM is fully loaded
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("page-loaded");
+  });
+</script>
+
+<script>
+  const navLinks = document.querySelectorAll("a");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+
+      if (href.startsWith("#")) return; // allow section scrolling
+
+      e.preventDefault();
+      document.body.classList.remove("page-loaded"); // start fade-out
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 300); // match fade duration
+    });
+  });
+</script>
+<!-- Features Section -->
+<section class="features" id="features">
+  <div class="features-container">
+    <h2>Why Choose <span>Pizza Paradise</span>? 🍕</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-fire"></i>
+        <h3>Wood-Fired Ovens</h3>
+        <p>Classic Neapolitan style pizzas with crispy crust and smoky flavor.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Fresh Ingredients</h3>
+        <p>We use only hand-picked, locally-sourced, and organic ingredients.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-truck"></i>
+        <h3>Fast Delivery</h3>
+        <p>Hot and fresh pizzas delivered to your doorstep within 30 minutes.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-smile"></i>
+        <h3>Customer Satisfaction</h3>
+        <p>We put your taste and happiness at the center of everything we do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-container">
+    <h2>What Our Customers Say ❤️</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"Absolutely the best pizza I've ever had! The crust is perfect and the toppings are always fresh."</p>
+        <h4>— Sarah L.</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Fast delivery, great service, and the pizza? Just wow. I'm officially a regular now."</p>
+        <h4>— Mark D.</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"The ambiance, the flavors, the quality... everything is top-notch. 10/10 experience!"</p>
+        <h4>— Anita K.</h4>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <h2>Contact Us 📞</h2>
+    <p>Have a question or want to place an order? Reach out below!</p>
+    
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Map Embed -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0192667616175!2d-122.42067948468162!3d37.77492977975943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5eaeed4f%3A0x7b0fd6d2b8a5b44f!2sPizza%20Place!5e0!3m2!1sen!2sus!4v1614044925056!5m2!1sen!2sus"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+

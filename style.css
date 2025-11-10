@@ -1,0 +1,699 @@
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --accent-color: #e63946;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --accent-color: #ff7f50;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.site-header {
+  background: var(--bg-color);
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d62828;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e63946;
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 1rem;
+    background: var(--bg-color);
+    border: 1px solid #ccc;
+    flex-direction: column;
+    display: none;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+/* HERO SECTION STYLES */
+.hero {
+  height: 100vh;
+  background: url('/img/pizza.jpg.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+   
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent overlay for text contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.hero-content h1 span {
+  color: #ffc107; /* Yellow for "Pizza" */
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #ddd;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #dc3545; /* red */
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #b02a37;
+}
+
+.btn-secondary {
+  background-color: #ffc107; /* yellow */
+  color: #000;
+}
+
+.btn-secondary:hover {
+  background-color: #e0a800;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* ===========================
+   MENU SECTION STYLES
+=========================== */
+:root {
+  --bg-menu: #fff8f0;
+  --text-main: #333;
+  --card-bg: #fff;
+  --price-color: #e63946;
+}
+
+body.dark-mode {
+  --bg-menu: #1f1f1f;
+  --text-main: #f0f0f0;
+  --card-bg: #2c2c2c;
+  --price-color: #ff4d4d;
+}
+
+.menu-section {
+  background-color: var(--bg-menu);
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--text-main);
+}
+
+.menu-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--price-color);
+}
+
+.menu-header p {
+  margin-bottom: 50px;
+  color: var(--text-main);
+}
+
+.menu-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-bottom: 40px;
+}
+
+.menu-card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.menu-card h3 {
+  margin: 15px 0 5px;
+  font-size: 1.3rem;
+}
+
+.menu-card p {
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.menu-card .price {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--price-color);
+}
+
+.menu-footer .menu-btn {
+  background-color: var(--price-color);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.menu-footer .menu-btn:hover {
+  background-color: var(--text-main);
+  color: white;
+}
+
+/* === CSS Variables === */
+:root {
+  --bg-reservation: linear-gradient(135deg, #ffdad5, #ffe3b3);
+  --text-primary: #333;
+  --text-secondary: #555;
+  --input-bg: #fff;
+  --btn-bg: #e63946;
+  --btn-hover-bg: #c12e3a;
+}
+
+body.dark-mode {
+  --bg-reservation: linear-gradient(135deg, #2b2b2b, #3c3c3c);
+  --text-primary: #f0f0f0;
+  --text-secondary: #ccc;
+  --input-bg: #444;
+  --btn-bg: #ff4d4d;
+  --btn-hover-bg: #ff1a1a;
+}
+
+/* === Reservation Section === */
+/* =============================
+   Reservation Section Styles
+   ============================= */
+.reservation-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fff1e6, #ffe8d6); /* Warm pastel blend */
+  text-align: center;
+  transition: background 0.4s ease;
+}
+
+body.dark-mode .reservation-section {
+  background: linear-gradient(135deg, #1f1f1f, #2a2a2a); /* Dark mode gradient */
+}
+
+.reservation-header h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color, #d62828);
+  margin-bottom: 0.5rem;
+}
+
+.reservation-header p {
+  color: var(--text-muted, #666);
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+/* =============================
+   Form Styles
+   ============================= */
+.reservation-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--input-bg, #ffffff);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.4s ease;
+}
+
+body.dark-mode .reservation-form {
+  background-color: var(--input-bg, #2c2c2c);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.form-group.full-width {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Inputs, Selects, and Textareas */
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 250px;
+  max-width: 100%;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color, #d62828);
+}
+
+/* Submit Button */
+.submit-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: var(--accent-color, #d62828);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #b51e1e;
+}
+
+/* =============================
+   Light & Dark Theme Variables
+   ============================= */
+:root {
+  --accent-color: #d62828;
+  --text-color: #222;
+  --text-muted: #666;
+  --section-bg: #f8f8f8;
+  --input-bg: #ffffff;
+}
+
+body.dark-mode {
+  --accent-color: #ff4d4d;
+  --text-color: #eee;
+  --text-muted: #aaa;
+  --section-bg: #1f1f1f;
+  --input-bg: #2c2c2c;
+}
+
+/* =============================
+   Responsive Design
+   ============================= */
+@media (max-width: 768px) {
+  .reservation-form input,
+  .reservation-form select,
+  .reservation-form textarea {
+    width: 100%;
+  }
+}
+
+/* About Us Section */
+.about {
+  background: linear-gradient(135deg, #ffe5b4, #ffb3b3);
+  padding: 80px 20px;
+  color: #333;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+  font-size: 2.8rem;
+  color: #e63946;
+  margin-bottom: 20px;
+}
+
+.about h2 span {
+  color: #111;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #e63946;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #c12e3a;
+}
+/* Fade-in effect on page load */
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+body.page-loaded {
+  opacity: 1;
+}
+
+/* Smooth scroll for section links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Transition between sections */
+section {
+  transition: all 0.4s ease-in-out;
+}
+:root {
+  --bg-color: #fff;
+  --text-color: #222;
+  --section-bg: #f8f8f8;
+  --input-bg: #fff;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --section-bg: #1e1e1e;
+  --input-bg: #2c2c2c;
+}
+/* Features Section */
+.features {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #ffe8cc, #ffc4c4);
+  color: #333;
+  text-align: center;
+}
+
+.features-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.features h2 {
+  font-size: 2.6rem;
+  color: #e63946;
+  margin-bottom: 50px;
+}
+
+.features h2 span {
+  color: #111;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  color: #e63946;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #444;
+}
+/* Testimonials Section */
+.testimonials {
+  background-color: #fff8f0;
+  padding: 80px 20px;
+  text-align: center;
+  color: #333;
+}
+
+.testimonials-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  color: #e63946;
+  margin-bottom: 50px;
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.testimonial-card {
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+:root {
+  --bg-contact: #fffaf0;
+  --form-bg: #fff;
+  --text-main: #333;
+  --text-secondary: #555;
+  --btn-bg: #e63946;
+  --btn-hover-bg: #c12e3a;
+  --input-bg: #fefefe;
+}
+
+body.dark-mode {
+  --bg-contact: #1f1f1f;
+  --form-bg: #2b2b2b;
+  --text-main: #f0f0f0;
+  --text-secondary: #ccc;
+  --btn-bg: #ff4d4d;
+  --btn-hover-bg: #ff1a1a;
+  --input-bg: #444;
+}
+
+.contact {
+  background-color: var(--bg-contact);
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--text-main);
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: var(--btn-bg);
+  margin-bottom: 10px;
+}
+
+.contact p {
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+.contact-form {
+  background-color: var(--form-bg);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: var(--input-bg);
+  color: var(--text-main);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: var(--btn-bg);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+.map-container {
+  min-height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
